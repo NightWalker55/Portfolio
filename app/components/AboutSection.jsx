@@ -23,7 +23,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (isSkillsInView) => (
-      <ul className="grid justify-center grid-cols-2 ml-10 md:grid-cols-3 gap-8 md:gap-12">
+      <ul className="grid justify-center grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
         {techSkills.map((skills, index) => (
           <motion.li
             key={index}
