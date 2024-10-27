@@ -23,7 +23,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (isSkillsInView) => (
-      <ul className="grid justify-center grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+      <ul className="grid justify-center grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 px-4 max-w-screen-sm mx-auto">
         {techSkills.map((skills, index) => (
           <motion.li
             key={index}
@@ -107,55 +107,59 @@ const TAB_DATA = [
     title: "Experience",
     id: "experience",
     content: (
-      <div className="max-w-screen-lg mx-auto mt-5 px-4">
-        <div className="relative">
-          {/* Card for Adjunct Lecturer */}
-          <div className="mb-8 flex items-start relative cursor-pointer">
-            <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M21 8h-6V3H9v5H3v11h18V8zm-3 11H6V10h12v9z"></path>
-              </svg>
-            </div>
-            <div className="ml-4 w-full bg-white p-4 rounded-xl shadow-md transition-transform transform hover:shadow-lg">
-              <h3 className="text-lg font-bold text-blue-600">Adjunct Lecturer</h3>
-              <p className="text-xs text-gray-600">International Islamic University Chittagong</p>
-              <p className="text-md text-gray-800 font-semibold">Sept 2024 - Ongoing</p>
-            </div>
-          </div>
-          
-          {/* Card for Industrial Attachment Intern */}
-          <div className="mb-8 flex items-start relative cursor-pointer">
-            <div className="flex-shrink-0 w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3H5c-1.11 0-2 .89-2 2v14c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 16H5V5h14v14zM9 16h6v2H9zm0-3h6v2H9zm0-3h6v2H9zm-4-6h14v2H5z"></path>
-              </svg>
-            </div>
-            <div className="ml-4 w-full bg-white p-4 rounded-xl shadow-md transition-transform transform hover:shadow-lg">
-              <h3 className="text-lg font-bold text-green-600">Industrial Attachment Intern</h3>
-              <p className="text-xs text-gray-600">New Technology Systems Ltd</p>
-              <p className="text-md text-gray-800 font-semibold">Sept 2023 - Oct 2023</p>
-            </div>
-          </div>
-          
-          {/* Card for Competitive Programming Trainer */}
-          <div className="mb-8 flex items-start relative cursor-pointer">
-            <div className="flex-shrink-0 w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center shadow-lg">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 3l8 6h-3v9h-10v-9H4l8-6zm0 2.67L7.75 8h2.25v7h4V8h2.25L12 5.67z"></path>
-              </svg>
-            </div>
-            <div className="ml-4 w-full bg-white p-4 rounded-xl shadow-md transition-transform transform hover:shadow-lg">
-              <h3 className="text-lg font-bold text-purple-600">Competitive Programming Trainer</h3>
-              <p className="text-xs text-gray-600">Cuet Computer Club</p>
-              <p className="text-md text-gray-800 font-semibold">July 2023 - Mar 2024</p>
-            </div>
-          </div>
-          
+      <div className="relative max-w-3xl mx-auto mt-5">
+     
+    
+     
+      <div className="mb-8 flex items-start relative cursor-pointer">
+        <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg">
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M21 8h-6V3H9v5H3v11h18V8zm-3 11H6V10h12v9z"></path>
+          </svg>
+        </div>
+        <div className="ml-4 w-full bg-white p-4 rounded-xl shadow-md transition-transform transform hover:shadow-lg">
+          <h3 className="text-lg font-bold text-blue-600">Adjunct Lecturer</h3>
+          <p className="text-xs text-gray-600">International Islamic University Chittagong</p>
+          <p className="text-md text-gray-800 font-semibold">Sept 2024 - Ongoing</p>
         </div>
       </div>
+    
+      
+      <div className="mb-8 flex items-start relative cursor-pointer">
+        <div className="flex-shrink-0 w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg">
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.11 0-2 .89-2 2v14c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 16H5V5h14v14zM9 16h6v2H9zm0-3h6v2H9zm0-3h6v2H9zm-4-6h14v2H5z"></path>
+          </svg>
+        </div>
+        <div className="ml-4 w-full bg-white p-4 rounded-xl shadow-md transition-transform transform hover:shadow-lg">
+          <h3 className="text-lg font-bold text-green-600">Industrial Attachment Intern</h3>
+          <p className="text-xs text-gray-600">New Technology Systems Ltd</p>
+          <p className="text-md text-gray-800 font-semibold">Sept 2023 - Oct 2023</p>
+        </div>
+      </div>
+    
+     
+      <div className="mb-8 flex items-start relative cursor-pointer">
+        <div className="flex-shrink-0 w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center shadow-lg">
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 3l8 6h-3v9h-10v-9H4l8-6zm0 2.67L7.75 8h2.25v7h4V8h2.25L12 5.67z"></path>
+          </svg>
+        </div>
+        <div className="ml-4 w-full bg-white p-4 rounded-xl shadow-md transition-transform transform hover:shadow-lg">
+          <h3 className="text-lg font-bold text-purple-600">Competitive Programming Trainer</h3>
+          <p className="text-xs text-gray-600">Cuet Computer Club</p>
+          <p className="text-md text-gray-800 font-semibold">July 2023 - Mar 2024</p>
+        </div>
+      </div>
+    
+      
+     
+    </div>
+    
+
+
     ),
   },
-  
 ];
 
 
