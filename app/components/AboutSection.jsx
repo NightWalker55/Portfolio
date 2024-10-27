@@ -162,6 +162,7 @@ const TAB_DATA = [
   },
 ];
 
+
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [isPending, startTransition] = useTransition();
@@ -175,9 +176,13 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <img src="/images/about-image.png" className="lg:mb-[130px]" width={500} height={500} />
+    <section className="text-white py-8" id="about">
+      <div className="max-w-screen-xl mx-auto px-4 md:grid md:grid-cols-2 gap-8 items-center sm:py-16">
+        <img 
+          src="/images/about-image.png" 
+          className="w-full h-auto max-w-[500px] mx-auto lg:mb-[130px]" 
+          alt="About Me"
+        />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
@@ -188,37 +193,33 @@ const AboutSection = () => {
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
           </p>
-          <div className="flex flex-row justify-start mt-8">
+          <div className="flex flex-row justify-start mt-8 flex-wrap">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              {" "}
-              Skills{" "}
+              Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              {" "}
-              Education{" "}
+              Education
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("research")}
               active={tab === "research"}
             >
-              {" "}
-              Research{" "}
+              Research
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("experience")}
               active={tab === "experience"}
             >
-              {" "}
-              Experience{" "}
+              Experience
             </TabButton>
           </div>
-          <div className="mt-8" ref={tab === "skills" ? skillsRef : null}>
+          <div className="mt-8 overflow-hidden" ref={tab === "skills" ? skillsRef : null}>
             {tab === "skills"
               ? TAB_DATA.find((t) => t.id === tab).content(isSkillsInView)
               : TAB_DATA.find((t) => t.id === tab).content}
@@ -229,6 +230,7 @@ const AboutSection = () => {
   );
 };
 
-
 export default AboutSection;
+
+
 
