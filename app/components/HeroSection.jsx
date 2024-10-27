@@ -44,15 +44,21 @@ const HeroSection = () => {
             </div>
             </div>
             <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-                <div className='rounded-full lg:ml-[200px] bg-[#181818] w-[300px] h-[300px] relative'>
-                <Image
-               src="/images/hero-image.jpg"
-               width={270}
-               height={270}
-               className='absolute rounded-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
-               />
-                </div>
-            </div>
+            <div className="col-span-5 place-self-center mt-4 lg:mt-0">
+  <div className="rounded-full lg:ml-[100px] w-[265px] h-[290px] bg-gradient-to-r from-pink-500 to-purple-500 p-1">
+    <div className="rounded-full bg-[#181818] w-[255px] h-[280px] relative overflow-hidden">
+      <Image
+        src="/images/port_image.jpeg"
+        width={250}
+        height={270}
+        className="absolute w-full h-full object-cover top-0 left-0 rounded-full"
+      />
+    </div>
+  </div>
+</div>
+
+</div>
+
         </div>
     </section>
   )

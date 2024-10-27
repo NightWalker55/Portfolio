@@ -4,30 +4,41 @@ import Link from "next/link";
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   return (
-    <div>
+    <div className="relative group transition-transform transform hover:scale-105 duration-300 shadow-lg rounded-lg overflow-hidden cursor-pointer">
+      {/* Image Section */}
       <div
-        className="h-52 md:h-72 rounded-t-xl relative group"
-        style={{ background: `url(${imgUrl}) no-repeat center center`, backgroundSize: "cover" }}
+        className="h-48 md:h-64 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${imgUrl})`,
+        }}
       >
-        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 ">
+        {/* Overlay with icons */}
+        <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
           <Link
             href={gitUrl}
-            className="h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
+            className="h-10 w-10 border-2 rounded-full border-[#ADB7BE] flex items-center justify-center hover:bg-[#ADB7BE] transition-all duration-300 mr-2"
           >
-            <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
+            <CodeBracketIcon className="h-6 w-6 text-white" />
           </Link>
           <Link
             href={previewUrl}
-            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
+            className="h-10 w-10 border-2 rounded-full border-[#ADB7BE] flex items-center justify-center hover:bg-[#ADB7BE] transition-all duration-300"
           >
-            <EyeIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
+            <EyeIcon className="h-6 w-6 text-white" />
           </Link>
         </div>
       </div>
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818]py-6 px-4">
-        <h5 className="text-xl font-semibold mb-2 text-center">{title}</h5>
-        <p className="text-[#ADB7BE] text-center">{description}</p>
+
+      {/* Content Section */}
+      <div className="bg-[#2a2a2a] p-4 rounded-b-lg">
+        <h5 className="text-lg font-bold mb-2 text-white text-center hover:text-[#ADB7BE] transition-colors duration-300">
+          {title}
+        </h5>
+        <p className="text-[#ADB7BE] text-center text-sm">{description}</p>
       </div>
+      
+      {/* Additional Aesthetic Features */}
+      <div className="absolute inset-0 border-2 border-[#ADB7BE] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 };
