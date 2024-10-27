@@ -23,7 +23,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (isSkillsInView) => (
-      <ul className="grid justify-center grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 px-4 max-w-screen-sm mx-auto">
+      <ul className="grid justify-center grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
         {techSkills.map((skills, index) => (
           <motion.li
             key={index}
@@ -153,7 +153,7 @@ const TAB_DATA = [
       </div>
     
       
-     
+      <div className="absolute -right-10 top-0 w-60 h-60 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-30 z-0"></div>
     </div>
     
 
@@ -161,7 +161,6 @@ const TAB_DATA = [
     ),
   },
 ];
-
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
@@ -176,13 +175,9 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white py-8" id="about">
-      <div className="max-w-screen-xl mx-auto px-4 md:grid md:grid-cols-2 gap-8 items-center sm:py-16">
-        <img 
-          src="/images/about-image.png" 
-          className="w-full h-auto max-w-[500px] mx-auto lg:mb-[130px]" 
-          alt="About Me"
-        />
+    <section className="text-white" id="about">
+      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+        <img src="/images/about-image.png" className="lg:mb-[130px]" width={500} height={500} />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
@@ -193,33 +188,37 @@ const AboutSection = () => {
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
           </p>
-          <div className="flex flex-row justify-start mt-8 flex-wrap">
+          <div className="flex flex-row justify-start mt-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              Skills
+              {" "}
+              Skills{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              Education
+              {" "}
+              Education{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("research")}
               active={tab === "research"}
             >
-              Research
+              {" "}
+              Research{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("experience")}
               active={tab === "experience"}
             >
-              Experience
+              {" "}
+              Experience{" "}
             </TabButton>
           </div>
-          <div className="mt-8 overflow-hidden" ref={tab === "skills" ? skillsRef : null}>
+          <div className="mt-8" ref={tab === "skills" ? skillsRef : null}>
             {tab === "skills"
               ? TAB_DATA.find((t) => t.id === tab).content(isSkillsInView)
               : TAB_DATA.find((t) => t.id === tab).content}
@@ -230,7 +229,6 @@ const AboutSection = () => {
   );
 };
 
+
 export default AboutSection;
-
-
 
