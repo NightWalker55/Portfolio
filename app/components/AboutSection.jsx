@@ -23,7 +23,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (isSkillsInView) => (
-      <ul className="grid justify-center grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+      <ul className="w-full grid justify-center grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
         {techSkills.map((skills, index) => (
           <motion.li
             key={index}
@@ -42,7 +42,7 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <div className="relative max-w-3xl mx-auto mt-16">
+      <div className="w-full relative max-w-3xl mx-auto mt-16">
   
   <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-gray-300 to-gray-500"></div>
 
@@ -79,7 +79,7 @@ const TAB_DATA = [
     title: "Research",
     id: "research",
     content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
       
       <div className="bg-[#181818] p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
         <h3 className="text-lg font-semibold text-white">Towards Developing an Automatic Punctuation Prediction Model for Bangla Language: A Pre-trained Mono-lingual Transformer-based Approach</h3>
@@ -107,7 +107,7 @@ const TAB_DATA = [
     title: "Experience",
     id: "experience",
     content: (
-      <div className="relative max-w-3xl mx-auto mt-5">
+      <div className="w-full relative max-w-3xl mx-auto mt-5">
      
     
      
@@ -153,7 +153,7 @@ const TAB_DATA = [
       </div>
     
       
-      <div className="absolute -right-10 top-0 w-60 h-60 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-30 z-0"></div>
+      
     </div>
     
 
@@ -188,7 +188,7 @@ const AboutSection = () => {
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
           </p>
-          <div className="flex flex-row justify-start mt-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 mt-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
