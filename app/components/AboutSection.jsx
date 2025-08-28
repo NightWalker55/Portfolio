@@ -9,12 +9,12 @@ const techSkills = [
   { id: 2, name: "NextJS", img: "/images/next.jpg" },
   { id: 3, name: "NodeJS", img: "/images/node.png" },
   { id: 4, name: "NestJS", img: "/images/nest.png" },
-  { id: 5, name: "MongoDB", img: "/images/mongo.jpg" },
+  { id: 5, name: "GO", img: "/images/go.jpg" },
   { id: 6, name: "Pytorch", img: "/images/torch.png" },
 ];
 
 const cardVariants = {
-  initial: { y: 50, opacity: 0 },
+  initial: { y: 40, opacity: 0 },
   animate: { y: 0, opacity: 1 },
 };
 
@@ -23,16 +23,16 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (isSkillsInView) => (
-      <ul className="w-full grid justify-center grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+      <ul className="grid grid-cols-2 md:grid-cols-3 gap-8 justify-center">
         {techSkills.map((skills, index) => (
           <motion.li
             key={index}
             variants={cardVariants}
             initial="initial"
             animate={isSkillsInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
+            transition={{ duration: 0.4, delay: index * 0.2 }}
           >
-            <TechSkills key={skills.id} name={skills.name} img={skills.img} />
+            <TechSkills name={skills.name} img={skills.img} />
           </motion.li>
         ))}
       </ul>
@@ -42,124 +42,187 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <div className="w-full relative max-w-3xl mx-auto mt-16">
-  
-  <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-gray-300 to-gray-500"></div>
-
-  
-  <div className="mb-16 flex items-center justify-center cursor-pointer">
-    <div className="relative w-10/12 bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center">
-        <span className="text-xl">1</span>
+      <div className="max-w-5xl mx-auto mt-12 space-y-8">
+        {[
+          {
+            title: "Chittagong University of Engineering and Technology",
+            subtitle: "B.Sc. in CSE",
+            gpa: "CGPA: 3.52 / 4.0",
+            color: "border-blue-500",
+           
+          },
+          {
+            title: "Chittagong College",
+            subtitle: "Higher Secondary in Science",
+            gpa: "GPA: 5.0 / 5.0",
+            color: "border-green-500",
+           
+          },
+        ].map((edu, idx) => (
+          <motion.div
+            key={idx}
+            className="relative flex items-center bg-[#1E1E1E] p-6 rounded-2xl shadow-2xl hover:shadow-3xl border-l-8 transition-transform transform hover:-translate-y-2 cursor-pointer"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: idx * 0.2 }}
+          >
+            <div className="absolute -left-8 text-3xl">{edu.icon}</div>
+            <div>
+              <h3 className="text-white font-bold text-lg">{edu.title}</h3>
+              <p className="text-gray-400">{edu.subtitle}</p>
+              <p className="text-gray-200 font-semibold">{edu.gpa}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
-      <h3 className="text-xl font-bold text-blue-600 mt-6">Chittagong University of Engineering and Technology</h3>
-      <p className="text-sm text-gray-500 mb-1">Bachelor of Science in CSE</p>
-      <p className="text-lg text-gray-800 font-semibold">CGPA: 3.52 / 4.0</p>
-    </div>
-  </div>
-
- 
-  <div className="mb-16 flex items-center justify-center cursor-pointer">
-    <div className="relative w-10/12 bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center">
-        <span className="text-xl">2</span>
-      </div>
-      <h3 className="text-xl font-bold text-green-600 mt-6">Chittagong College</h3>
-      <p className="text-sm text-gray-500 mb-1">Higher Secondary Education in Science</p>
-      <p className="text-lg text-gray-800 font-semibold">GPA: 5.0 / 5.0</p>
-    </div>
-  </div>
-</div>
-
-
-
     ),
   },
   {
     title: "Research",
     id: "research",
     content: (
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-      
-      <div className="bg-[#181818] p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <h3 className="text-lg font-semibold text-white">Towards Developing an Automatic Punctuation Prediction Model for Bangla Language: A Pre-trained Mono-lingual Transformer-based Approach</h3>
-        <p className="text-sm text-gray-400">An automatic Bangla punctuation prediction model that has been developed with the help of transformer models.</p>
-        <a href="https://ieeexplore.ieee.org/abstract/document/10534556" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-500 mt-2 inline-block">
-          Read more
-        </a>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {[
+          {
+            title: "Automatic Bangla Punctuation Prediction Model",
+            description:
+              "Developed a transformer-based model for automatic Bangla punctuation prediction.",
+            link: "https://ieeexplore.ieee.org/abstract/document/10534556",
+          },
+          {
+            title: "Multimodal Bangla Cyberbullying Meme Detection",
+            description:
+              "Cyberbullying detection model combining NLP and Computer Vision.",
+            link: "https://link-to-your-research2.com",
+          },
+        ].map((res, idx) => (
+          <motion.div
+            key={idx}
+            className="bg-[#1E1E1E] p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer"
+            whileHover={{ y: -5 }}
+          >
+            <h3 className="text-white font-semibold text-lg">{res.title}</h3>
+            <p className="text-gray-400 text-sm mt-2">{res.description}</p>
+            <a
+              href={res.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-500 mt-3 inline-block font-medium"
+            >
+              Read more
+            </a>
+          </motion.div>
+        ))}
       </div>
-
-      <div className="bg-[#181818] p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <h3 className="text-lg font-semibold text-white">A Multimodal Approach to Bangla Cyberbullying
-        Meme Detection in Social Media</h3>
-        <p className="text-sm text-gray-400">A Cyberbullying multimodal detection model that combines the power of Computer Vision and NLP. </p>
-        <a href="https://link-to-your-research2.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-500 mt-2 inline-block">
-          Read more
-        </a>
-      </div>
-
-      
-    </div>
     ),
-    
   },
   {
     title: "Experience",
     id: "experience",
     content: (
-      <div className="w-full relative max-w-3xl mx-auto mt-5">
-     
-    
-     
-      <div className="mb-8 flex items-start relative cursor-pointer">
-        <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg">
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M21 8h-6V3H9v5H3v11h18V8zm-3 11H6V10h12v9z"></path>
-          </svg>
-        </div>
-        <div className="ml-4 w-full bg-white p-4 rounded-xl shadow-md transition-transform transform hover:shadow-lg">
-          <h3 className="text-lg font-bold text-blue-600">Adjunct Lecturer</h3>
-          <p className="text-xs text-gray-600">International Islamic University Chittagong</p>
-          <p className="text-md text-gray-800 font-semibold">Sept 2024 - Ongoing</p>
-        </div>
+      <div className="max-w-5xl mx-auto mt-12 space-y-10">
+        {[
+          {
+            role: "Lecturer",
+            org: "Chittagong Independent University",
+            duration: "Jan 2025 - Ongoing",
+            color: "from-blue-500 to-blue-700",
+          },
+          {
+            role: "Adjunct Lecturer",
+            org: "International Islamic University Chittagong",
+            duration: "Sept 2024 - Ongoing",
+            color: "from-green-400 to-green-600",
+          },
+          {
+            role: "Industrial Attachment Intern",
+            org: "New Technology Systems Ltd",
+            duration: "Sept 2023 - Oct 2023",
+            color: "from-purple-400 to-purple-600",
+          },
+          {
+            role: "Competitive Programming Trainer",
+            org: "Cuet Computer Club",
+            duration: "July 2023 - Mar 2024",
+            color: "from-pink-400 to-pink-600",
+          },
+        ].map((exp, idx) => (
+          <motion.div
+            key={idx}
+            className="relative group"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: idx * 0.2 }}
+          >
+            
+            <div
+              className={`absolute -top-5 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br ${exp.color} shadow-lg z-10 flex items-center justify-center text-white font-bold`}
+            >
+              {idx + 1}
+            </div>
+  
+            {/* Card */}
+            <div className="relative bg-[#1E1E1E] p-6 pt-12 rounded-2xl shadow-2xl hover:shadow-3xl transition-transform transform hover:-translate-y-2">
+              <h3 className="text-white font-bold text-lg">{exp.role}</h3>
+              <p className="text-gray-400 text-sm">{exp.org}</p>
+              <p className="text-gray-200 font-semibold">{exp.duration}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
-    
-      
-      <div className="mb-8 flex items-start relative cursor-pointer">
-        <div className="flex-shrink-0 w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg">
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19 3H5c-1.11 0-2 .89-2 2v14c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 16H5V5h14v14zM9 16h6v2H9zm0-3h6v2H9zm0-3h6v2H9zm-4-6h14v2H5z"></path>
-          </svg>
-        </div>
-        <div className="ml-4 w-full bg-white p-4 rounded-xl shadow-md transition-transform transform hover:shadow-lg">
-          <h3 className="text-lg font-bold text-green-600">Industrial Attachment Intern</h3>
-          <p className="text-xs text-gray-600">New Technology Systems Ltd</p>
-          <p className="text-md text-gray-800 font-semibold">Sept 2023 - Oct 2023</p>
-        </div>
-      </div>
-    
-     
-      <div className="mb-8 flex items-start relative cursor-pointer">
-        <div className="flex-shrink-0 w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center shadow-lg">
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 3l8 6h-3v9h-10v-9H4l8-6zm0 2.67L7.75 8h2.25v7h4V8h2.25L12 5.67z"></path>
-          </svg>
-        </div>
-        <div className="ml-4 w-full bg-white p-4 rounded-xl shadow-md transition-transform transform hover:shadow-lg">
-          <h3 className="text-lg font-bold text-purple-600">Competitive Programming Trainer</h3>
-          <p className="text-xs text-gray-600">Cuet Computer Club</p>
-          <p className="text-md text-gray-800 font-semibold">July 2023 - Mar 2024</p>
-        </div>
-      </div>
-    
-      
-      
-    </div>
-    
-
-
     ),
   },
+  {
+    title: "Achievements",
+    id: "achievements",
+    content: (
+      <div className="max-w-5xl mx-auto mt-12 relative">
+        {/* Vertical line */}
+        <div className="absolute left-10 top-0 h-full border-l-2 border-gray-700"></div>
+  
+        {[
+          {
+            title: "Judge - World Robot Olympiad (Regional Round)",
+            year: "2025",
+            description: "Served as a regional judge evaluating participants’ robots and innovative solutions.",
+            color: "from-purple-400 to-purple-600",
+          },
+          {
+            title: "Best Paper Award",
+            year: "2024",
+            description: "Receive second best paper award 6th International Conference on Electrical Engineering and Information \& Communication Technology (ICEEICT)",
+            color: "from-blue-400 to-blue-600",
+          },
+          // add more achievements here
+        ].map((ach, idx) => (
+          <motion.div
+            key={idx}
+            className="relative flex items-start mb-12"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: idx * 0.2 }}
+          >
+            {/* Circle badge */}
+            <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-r ${ach.color} flex items-center justify-center text-white font-bold z-10`}>
+              {idx + 1}
+            </div>
+  
+            {/* Card */}
+            <div className="ml-6 bg-[#1E1E1E] p-6 rounded-2xl shadow-2xl hover:shadow-3xl transition-transform transform hover:-translate-y-2 flex-1">
+              <h3 className="text-white font-bold text-lg">{ach.title}</h3>
+              <p className="text-gray-400 text-sm">{ach.year}</p>
+              <p className="text-gray-200 mt-2">{ach.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    ),
+  }
+  
+  
 ];
 
 const AboutSection = () => {
@@ -175,60 +238,42 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <img src="/images/about-image.png" className="lg:mb-[130px]" width={500} height={500} />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, HTML, CSS, and Git. 
-            I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 mt-8">
+    <section className="text-white py-12" id="about">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold mb-6 text-center">About Me</h2>
+        <p className="text-gray-300 text-center max-w-3xl mx-auto mb-10">
+        I am a research enthusiast and passionate software developer with experience in building
+           interactive and responsive applications. Alongside my development expertise in GO,NextJs, 
+           React, Redux, Node.js, Express and Git, I have also been actively involved in various research 
+           projects spanning deep learning,natural language processing, and computer vision technologies. 
+           These experiences have strengthened my analytical thinking, problem-solving abilities, and curiosity 
+           for exploring how research-driven innovations can be translated into real-world software solutions. 
+           I am a quick learner, eager to expand my knowledge, and I thrive in collaborative environments where both research 
+           and development come together to create impactful, high-quality outcomes.
+        </p>
+
+        {/* Tabs */}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {TAB_DATA.map((t) => (
             <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
+              key={t.id}
+              selectTab={() => handleTabChange(t.id)}
+              active={tab === t.id}
             >
-              {" "}
-              Skills{" "}
+              {t.title}
             </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("research")}
-              active={tab === "research"}
-            >
-              {" "}
-              Research{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("experience")}
-              active={tab === "experience"}
-            >
-              {" "}
-              Experience{" "}
-            </TabButton>
-          </div>
-          <div className="mt-8" ref={tab === "skills" ? skillsRef : null}>
-            {tab === "skills"
-              ? TAB_DATA.find((t) => t.id === tab).content(isSkillsInView)
-              : TAB_DATA.find((t) => t.id === tab).content}
-          </div>
+          ))}
+        </div>
+
+        {/* Tab Content */}
+        <div ref={tab === "skills" ? skillsRef : null}>
+          {tab === "skills"
+            ? TAB_DATA.find((t) => t.id === tab).content(isSkillsInView)
+            : TAB_DATA.find((t) => t.id === tab).content}
         </div>
       </div>
     </section>
   );
 };
 
-
 export default AboutSection;
-
