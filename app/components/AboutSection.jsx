@@ -192,7 +192,7 @@ const TAB_DATA = [
           {
             title: "Best Paper Award",
             year: "2024",
-            description: "Receive second best paper award 6th International Conference on Electrical Engineering and Information \& Communication Technology (ICEEICT)",
+            description: "Received second best paper award 6th International Conference on Electrical Engineering and Information \& Communication Technology (ICEEICT)",
             color: "from-blue-400 to-blue-600",
           },
           // add more achievements here
