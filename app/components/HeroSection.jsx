@@ -24,13 +24,7 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
-<<<<<<< HEAD
-              <button className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-medium bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:opacity-90 text-white shadow-lg transition duration-300">
-                Hire Me
-              </button>
-=======
               
->>>>>>> 9e2c5f3 (Updated Portfolio 2026)
               <a href="/CV/CV.pdf" download>
                 <button className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-medium border border-purple-500 hover:bg-purple-600 hover:text-white text-purple-400 transition duration-300">
                   Download CV

@@ -363,15 +363,12 @@ const TAB_DATA = [
           },
           {
             year: "2024",
-<<<<<<< HEAD
             description: "Received second best paper award 6th International Conference on Electrical Engineering and Information \& Communication Technology (ICEEICT)",
             color: "from-blue-400 to-blue-600",
-=======
             label: "RESEARCH",
             title: "Second Best Paper Award",
             description:
               "Recognized at ICEEICT 2024 for research on automatic punctuation prediction for the Bangla language.",
->>>>>>> 9e2c5f3 (Updated Portfolio 2026)
           },
         ].map((achievement, idx) => (
           <motion.article
